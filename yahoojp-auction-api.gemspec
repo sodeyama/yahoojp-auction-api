@@ -5,7 +5,7 @@ require 'yahoojp/api/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "yahoojp-auction-api"
-  spec.version       = Yahoojp::Api::VERSION
+  spec.version       = YahooJp::Api::VERSION
   spec.authors       = ["sodex"]
   spec.email         = ["ta.sode@gmail.com"]
   spec.description   = %q{Yahoo Auction JP Ruby API}
@@ -20,7 +20,4 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "webmock", "1.11.0"
 end
