@@ -10,17 +10,19 @@ module YahooJp
         token = opts.delete(:token)
         opts[:output] = 'json'
         opts[:callback] = 'callback'
+        opts.merge!(YahooJp::Api.options))
         if token.nil? then
           if v == 'V1' then
             url = ['http:/', @@base_uri, v, api].join('/')
           elsif v == 'V2' then
             url = ['http:/', @@base_uri, v, 'json', api].join('/')
           end
-          YahooJp::Request.get(url, opts.merge!(YahooJp::Api.options))
+          YahooJp::Request.get(url, opts)
         else
+          opts.merge!(YahooJp::Api.options))
           opts.delete(:appid)
           url = ['https:/', @@base_uri, v, api].join('/')
-          YahooJp::Request.get_with_auth(url, token, opts.merge!(YahooJp::Api.options))
+          YahooJp::Request.get_with_auth(url, token, opts)
         end
       end
 
